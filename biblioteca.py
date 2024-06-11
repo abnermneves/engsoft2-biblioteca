@@ -13,7 +13,7 @@ class Livro:
 
     def devolver(self):
         self.disponivel = True
-        print(f"Você devolveu o livro '{self.titulo}' de {self.autor}.")
+        print(f"Você devolveu o livro '{self.titulo}', de {self.autor}.")
 
 class Biblioteca:
     def __init__(self):
