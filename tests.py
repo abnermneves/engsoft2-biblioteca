@@ -1,5 +1,7 @@
 import unittest
 from biblioteca import Livro, Biblioteca
+from unittest.mock import patch
+from io import StringIO
 
 class TestLivro(unittest.TestCase):
     def setUp(self):
@@ -15,6 +17,13 @@ class TestLivro(unittest.TestCase):
         self.assertFalse(self.livro.disponivel)
         self.livro.devolver()
         self.assertTrue(self.livro.disponivel)
+
+    def test_emprestar_ja_emprestado(self):
+        self.livro.emprestar()
+        self.assertFalse(self.livro.disponivel)
+        with patch('sys.stdout', new = StringIO()) as output:
+            self.livro.emprestar()
+        self.assertEqual(output.getvalue(), f"Desculpe, o livro '{self.livro.titulo}' não está disponível para empréstimo.\n")
 
 class TestBiblioteca(unittest.TestCase):
     def setUp(self):
