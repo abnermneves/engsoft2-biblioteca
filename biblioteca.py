@@ -9,7 +9,7 @@ class Livro:
             self.disponivel = False
             print(f"Você emprestou o livro '{self.titulo}' de {self.autor}.")
         else:
-            print(f"Desculpe, o livro '{self.titulo}' não está disponível para empréstimo.")
+            print(f"Desculpe, '{self.titulo}' não está disponível para empréstimo.")
 
     def devolver(self):
         self.disponivel = True

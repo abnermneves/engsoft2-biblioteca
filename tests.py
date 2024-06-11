@@ -23,7 +23,7 @@ class TestLivro(unittest.TestCase):
         self.assertFalse(self.livro.disponivel)
         with patch('sys.stdout', new = StringIO()) as output:
             self.livro.emprestar()
-        self.assertEqual(output.getvalue(), f"Desculpe, o livro '{self.livro.titulo}' não está disponível para empréstimo.\n")
+        self.assertEqual(output.getvalue(), f"Desculpe, '{self.livro.titulo}' não está disponível para empréstimo.\n")
 
 class TestBiblioteca(unittest.TestCase):
     def setUp(self):
