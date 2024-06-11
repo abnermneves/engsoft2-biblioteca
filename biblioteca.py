@@ -12,11 +12,8 @@ class Livro:
             print(f"Desculpe, o livro '{self.titulo}' não está disponível para empréstimo.")
 
     def devolver(self):
-        if not self.disponivel:
-            self.disponivel = True
-            print(f"Você devolveu o livro '{self.titulo}' de {self.autor}.")
-        else:
-            print(f"Este livro já está disponível na biblioteca.")
+        self.disponivel = True
+        print(f"Você devolveu o livro '{self.titulo}' de {self.autor}.")
 
 class Biblioteca:
     def __init__(self):
